@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/Sword.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/TilesDungeon.tres" type="TileSet" id=4]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Stage-4.gd" type="Script" id=6]
+[ext_resource path="res://scenes/LoseScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://white_block.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Mixing Table.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+fog_enabled = true
+dof_blur_far_distance = 9.7
+dof_blur_far_amount = 0.48
+dof_blur_near_distance = 1.27
+dof_blur_near_transition = 0.47
+dof_blur_near_amount = 0.21
+glow_strength = 0.76
+glow_bloom = 0.02
+glow_blend_mode = 0
+glow_hdr_threshold = 1.18
+glow_hdr_luminance_cap = 6.54
+glow_hdr_scale = 1.11
+glow_bicubic_upscale = true
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 1024, 640, 0, 0, 0, 0, 0, 640, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Stage-4" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 536870912, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 131072, 3, 0, 131073, -1610612732, 0, 131074, -1610612732, 0, 131075, -1610612732, 0, 131076, -1610612732, 0, 131077, -1610612732, 0, 131078, -1610612732, 0, 131079, -1610612732, 0, 131080, -1610612732, 0, 131081, 6, 0, 131082, -1610612732, 0, 131083, -1610612732, 0, 131084, 6, 0, 131085, 6, 0, 131086, -1610612732, 0, 131087, 536870915, 0, 196608, 3, 0, 196609, 9, 0, 196610, 6, 0, 196611, -1610612732, 0, 196612, 6, 0, 196613, -1610612732, 0, 196614, -1610612732, 0, 196615, 6, 0, 196616, 6, 0, 196617, -1610612732, 0, 196618, -1610612732, 0, 196619, 6, 0, 196620, 6, 0, 196621, 5, 0, 196622, -1610612732, 0, 196623, 536870915, 0, 262144, 3, 0, 262145, -1610612732, 0, 262146, 6, 0, 262147, 5, 0, 262148, -1610612732, 0, 262149, 6, 0, 262150, -1610612732, 0, 262151, -1610612732, 0, 262152, -1610612732, 0, 262153, -1610612732, 0, 262154, 6, 0, 262155, -1610612732, 0, 262156, -1610612732, 0, 262157, -1610612732, 0, 262158, -1610612732, 0, 262159, 536870915, 0, 327680, 3, 0, 327681, -1610612732, 0, 327682, -1610612732, 0, 327683, -1610612732, 0, 327684, -1610612732, 0, 327685, -1610612732, 0, 327686, 6, 0, 327687, 6, 0, 327688, 9, 0, 327689, -1610612732, 0, 327690, 6, 0, 327691, -1610612732, 0, 327692, 6, 0, 327693, -1610612732, 0, 327694, -1610612732, 0, 327695, 536870915, 0, 393216, 3, 0, 393217, -1610612732, 0, 393218, -1610612732, 0, 393219, 5, 0, 393220, 6, 0, 393221, -1610612732, 0, 393222, 6, 0, 393223, 6, 0, 393224, -1610612732, 0, 393225, 6, 0, 393226, 6, 0, 393227, -1610612732, 0, 393228, -1610612732, 0, 393229, 5, 0, 393230, 6, 0, 393231, 536870915, 0, 458752, 3, 0, 458753, -1610612732, 0, 458754, 5, 0, 458755, -1610612732, 0, 458756, 6, 0, 458757, -1610612732, 0, 458758, -1610612732, 0, 458759, -1610612732, 0, 458760, 6, 0, 458761, -1610612732, 0, 458762, -1610612732, 0, 458763, 5, 0, 458764, 6, 0, 458765, 6, 0, 458766, 9, 0, 458767, 536870915, 0, 524288, 3, 0, 524289, 9, 0, 524290, -1610612732, 0, 524291, -1610612732, 0, 524292, -1610612732, 0, 524293, -1610612732, 0, 524294, -1610612732, 0, 524295, -1610612732, 0, 524296, -1610612732, 0, 524297, -1610612732, 0, 524298, 6, 0, 524299, -1610612732, 0, 524300, -1610612732, 0, 524301, -1610612732, 0, 524302, 9, 0, 524303, 536870915, 0, 589824, 1610612744, 0, 589825, -1073741821, 0, 589826, -1073741821, 0, 589827, -1073741821, 0, 589828, -1073741821, 0, 589829, -1073741821, 0, 589830, -1073741821, 0, 589831, -1073741821, 0, 589832, -1073741821, 0, 589833, -1073741821, 0, 589834, -1073741821, 0, 589835, -1073741821, 0, 589836, -1073741821, 0, 589837, -1073741821, 0, 589838, -1073741821, 0, 589839, -1610612728, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 160 )
+
+[node name="Torch" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 320 )
+HARD = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 512, 320 )
+rotation = 0.118539
+color = Color( 0, 0, 0, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 320 )
+current = true
+script = ExtResource( 5 )
+
+[node name="Sword" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 240 )
+rotation = -1.04918
+
+[node name="Sword2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 448 )
+rotation = 0.462197
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 516.75, 16 )
+scale = Vector2( 22.5444, 1 )
+texture = ExtResource( 9 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1008.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLeft" type="Label" parent="Control"]
+margin_left = 384.0
+margin_right = 640.0
+margin_bottom = 40.0
+align = 1
+valign = 1
+
+[node name="LoseScreen" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="Mixing Table" parent="." instance=ExtResource( 10 )]
+position = Vector2( 512, 528 )
+scale = Vector2( 3, 3 )

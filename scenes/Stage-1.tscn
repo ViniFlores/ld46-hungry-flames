@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/TilesDungeon.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Stage-1.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Torch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/new_dynamicfontdata.tres" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/LoseScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/WinScreen.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 6 )
+
+[node name="Stage-1" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 8, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 536870915, 0, 131072, 1073741827, 0, 131073, -2147483639, 0, 131074, -2147483639, 0, 131075, -2147483639, 0, 131076, -2147483639, 0, 131077, -2147483639, 0, 131078, -2147483639, 0, 131079, -2147483639, 0, 131080, -2147483639, 0, 131081, -2147483639, 0, 131082, -2147483639, 0, 131083, -2147483639, 0, 131084, -2147483639, 0, 131085, -2147483639, 0, 131086, -2147483639, 0, 131087, 536870915, 0, 196608, 1073741827, 0, 196609, -2147483639, 0, 196610, -2147483639, 0, 196611, -2147483639, 0, 196612, -2147483639, 0, 196613, -2147483639, 0, 196614, -2147483639, 0, 196615, -2147483639, 0, 196616, -2147483639, 0, 196617, -2147483639, 0, 196618, -2147483639, 0, 196619, -2147483639, 0, 196620, -2147483639, 0, 196621, -2147483639, 0, 196622, -2147483639, 0, 196623, 536870915, 0, 262144, 1073741827, 0, 262145, -2147483639, 0, 262146, -2147483639, 0, 262147, -2147483639, 0, 262148, -2147483639, 0, 262149, -2147483639, 0, 262150, -2147483639, 0, 262151, -2147483639, 0, 262152, -2147483639, 0, 262153, -2147483639, 0, 262154, -2147483639, 0, 262155, -2147483639, 0, 262156, -2147483639, 0, 262157, -2147483639, 0, 262158, -2147483639, 0, 262159, 536870915, 0, 327680, 1073741827, 0, 327681, -2147483639, 0, 327682, -2147483639, 0, 327683, -2147483639, 0, 327684, -2147483639, 0, 327685, -2147483639, 0, 327686, -2147483639, 0, 327687, -2147483639, 0, 327688, -2147483639, 0, 327689, -2147483639, 0, 327690, -2147483639, 0, 327691, -2147483639, 0, 327692, -2147483639, 0, 327693, -2147483639, 0, 327694, -2147483639, 0, 327695, 536870915, 0, 393216, 1073741827, 0, 393217, -2147483639, 0, 393218, -2147483639, 0, 393219, -2147483639, 0, 393220, -2147483639, 0, 393221, -2147483639, 0, 393222, -2147483639, 0, 393223, -2147483639, 0, 393224, -2147483639, 0, 393225, -2147483639, 0, 393226, -2147483639, 0, 393227, -2147483639, 0, 393228, -2147483639, 0, 393229, -2147483639, 0, 393230, -2147483639, 0, 393231, 536870915, 0, 458752, 1073741827, 0, 458753, -2147483639, 0, 458754, -2147483639, 0, 458755, -2147483639, 0, 458756, -2147483639, 0, 458757, -2147483639, 0, 458758, -2147483639, 0, 458759, -2147483639, 0, 458760, -2147483639, 0, 458761, -2147483639, 0, 458762, -2147483639, 0, 458763, -2147483639, 0, 458764, -2147483639, 0, 458765, -2147483639, 0, 458766, -2147483639, 0, 458767, 536870915, 0, 524288, 1073741827, 0, 524289, -2147483639, 0, 524290, -2147483639, 0, 524291, -2147483639, 0, 524292, -2147483639, 0, 524293, -2147483639, 0, 524294, -2147483639, 0, 524295, -2147483639, 0, 524296, -2147483639, 0, 524297, -2147483639, 0, 524298, -2147483639, 0, 524299, -2147483639, 0, 524300, -2147483639, 0, 524301, -2147483639, 0, 524302, -2147483639, 0, 524303, 536870915, 0, 589824, -2147483640, 0, 589825, -536870909, 0, 589826, -536870909, 0, 589827, -536870909, 0, 589828, -536870909, 0, 589829, -536870909, 0, 589830, -536870909, 0, 589831, -536870909, 0, 589832, -536870909, 0, 589833, -536870909, 0, 589834, -536870909, 0, 589835, -536870909, 0, 589836, -536870909, 0, 589837, -536870909, 0, 589838, -536870909, 0, 589839, 1073741832, 0 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 512, 208 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 208 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 320 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 2 )
+
+[node name="Torch" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 320 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 48.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Control"]
+margin_left = 336.0
+margin_right = 688.0
+margin_bottom = 48.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinScreen" parent="." instance=ExtResource( 8 )]
+next_stage = "res://scenes/Stage-2.tscn"
+
+[node name="Label2" type="Label" parent="WinScreen"]
+margin_left = 144.0
+margin_top = 272.0
+margin_right = 882.0
+margin_bottom = 354.0
+custom_fonts/font = SubResource( 2 )
+text = "Now defend the chalice from the ghosts with your sword!"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="WinScreen"]
+margin_left = 144.0
+margin_top = 528.0
+margin_right = 882.0
+margin_bottom = 610.0
+custom_fonts/font = SubResource( 2 )
+text = "X - TO SLASH"
+align = 1
+valign = 1
+
+[node name="LoseScreen" parent="." instance=ExtResource( 7 )]
+visible = false

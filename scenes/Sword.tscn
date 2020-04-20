@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sword.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.96795, 8.20753 )
+
+[node name="Sword" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4.08675 )
+rotation = -0.0060389
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = -0.758543
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
